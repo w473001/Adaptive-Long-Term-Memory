@@ -1,28 +1,3 @@
-# Adaptive Long Term Memory for Experts and Bandits
-Source code for the experiments accompanying the paper entitled "Adaptive Long Term Memory for Experts and Bandits"
-
-## Requirements
-* Python >= 3.7
-* Numpy >= 1.19
-
-## Instructions
-Run main.py with the config_name set to the name of the desired configuration file, which is located in /config/ .
-
-The configuration files define experimental controls, and have the following form:
-
-```
-{
-  "description": "",
-  "algorithms": [...], // a list of the algorithms to run 
-  "global": {...}, // definitions of global parameters which apply to the experiment
-  "local": {...}, // definitions of parameters which apply to individual algorithms
-  "tuning_parameters": {...} // definitions of parameters for tuning/optimising algorithm parameters
-}
-```
-
-For example 
-
-```
 {
   "description": "Config for multitask experiments",
   "algorithms": [
@@ -87,9 +62,3 @@ For example
     "seed": 888888
   }
 }
-```
-
-The "n_processes" parameter in "tuning_parameters" also applies when running main.py itself, as this uses python's 
-multiprocessing library.
-
-Results are stored as a pickled dictionary object in /output/ . The keys of the dictionary are the algorithm names from the configuration file, and the values are numpy arrays of shape (n_runs, total_trials_global), containing losses from each run.

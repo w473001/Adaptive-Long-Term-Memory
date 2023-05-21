@@ -1,0 +1,70 @@
+{
+  "description": "Settings to tune for multitask",
+  "algorithms": [
+    "ADAPTLTM",
+    "SWARM",
+    "MARKOV_SPECIALISTS_EXP4",
+    "FIXED_SHARE_EXP4",
+    "EXP4"
+  ],
+  "global": {
+    "n_tasks": 12,
+    "n_actions": 16,
+    "total_trials_global": 28800,
+    "n_epochs": 10,
+    "n_switches_per_epoch": 11,
+    "super_pool_size": 80,
+    "epoch_pool_size": 4,
+    "epoch_block_pool_size": 12,
+    "random_switches_within_epoch": true,
+    "good_loss_upper_bound": 0.025,
+    "bad_loss_upper_bound": 0.5,
+    "n_experts": 1024,
+    "epsilon": 0.1,
+    "n_runs": 10
+  },
+  "local": {
+    "ADAPTLTM": {
+      "eta_optimal": false,
+      "eta": 14.4444444 ,
+      "alpha": 0.25,
+      "rho": 1
+    },
+    "SWARM": {
+      "eta_optimal": false,
+      "eta": 13.714285714285715
+    },
+    "EXP4": {
+      "eta_optimal": false,
+      "eta": 13.714285714285715
+    },
+    "MARKOV_SPECIALISTS_EXP4": {
+      "eta_optimal": false,
+      "eta": 16.57142857142857,
+      "alpha_optimal": true,
+      "alpha": 0.0,
+      "theta_optimal": true,
+      "theta": 0.0
+    },
+    "FIXED_SHARE_EXP4": {
+      "eta_optimal": false,
+      "eta": 16.57142857142857,
+      "alpha_optimal": true,
+      "alpha": 0.0
+    }
+  },
+  "tuning_parameters": {
+    "n_iterations_per_training_step": 3,
+    "n_tuning_steps": 10,
+    "n_processes": 12,
+    "eta_min": 12.0,
+    "eta_max": 18.0,
+    "alpha_min": 1e-03,
+    "alpha_max": 0.3,
+    "theta_min": 1e-05,
+    "theta_max": 0.15,
+    "rho_min": 10,
+    "rho_max": 50.0,
+    "seed": 888888
+  }
+}
